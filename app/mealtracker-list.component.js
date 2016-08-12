@@ -1,4 +1,4 @@
-System.register(['angular2/core', './mealtracker.component', './edit-mealtracker.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './mealtracker.component', './mealtracker.model', './edit-mealtracker.component', './add-meal.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './mealtracker.component', './edit-mealtracker
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mealtracker_component_1, edit_mealtracker_component_1;
+    var core_1, mealtracker_component_1, mealtracker_model_1, edit_mealtracker_component_1, add_meal_component_1;
     var MealTrackerListComponent;
     return {
         setters:[
@@ -20,8 +20,14 @@ System.register(['angular2/core', './mealtracker.component', './edit-mealtracker
             function (mealtracker_component_1_1) {
                 mealtracker_component_1 = mealtracker_component_1_1;
             },
+            function (mealtracker_model_1_1) {
+                mealtracker_model_1 = mealtracker_model_1_1;
+            },
             function (edit_mealtracker_component_1_1) {
                 edit_mealtracker_component_1 = edit_mealtracker_component_1_1;
+            },
+            function (add_meal_component_1_1) {
+                add_meal_component_1 = add_meal_component_1_1;
             }],
         execute: function() {
             MealTrackerListComponent = (function () {
@@ -33,13 +39,16 @@ System.register(['angular2/core', './mealtracker.component', './edit-mealtracker
                     this.onMealTrackerSelect.emit(clickedMealTracker);
                     console.log(this.selectedMeal);
                 };
+                MealTrackerListComponent.prototype.createMeal = function (inputArray) {
+                    this.mealTrackerList.push(new mealtracker_model_1.MealTracker(inputArray[0], inputArray[1], inputArray[2]));
+                };
                 MealTrackerListComponent = __decorate([
                     core_1.Component({
                         selector: 'mealtracker-list',
                         inputs: ['mealTrackerList'],
                         outputs: ['onMealTrackerSelect'],
-                        directives: [mealtracker_component_1.MealTrackerComponent, edit_mealtracker_component_1.EditMealTrackerDetailsComponent],
-                        template: "\n  <mealtracker-display *ngFor=\"#currentMeal of mealTrackerList\"[class.selected]=\"currentMeal ===selectedMeal\"(click)=\"mealClicked(currentMeal)\"[mealtracker]=\"currentMeal\"></mealtracker-display>\n  <edit-mealtracker-details *ngIf=\"selectedMeal\"[mealtracker]=\"currentMeal\"></edit-mealtracker-details>\n  "
+                        directives: [mealtracker_component_1.MealTrackerComponent, edit_mealtracker_component_1.EditMealTrackerDetailsComponent, add_meal_component_1.AddMealComponent],
+                        template: "\n  <mealtracker-display *ngFor=\"#currentMeal of mealTrackerList\"[class.selected]=\"currentMeal ===selectedMeal\"(click)=\"mealClicked(currentMeal)\"[mealtracker]=\"currentMeal\"></mealtracker-display>\n  <add-meal (onSubmitForm)=\"createMeal($event)\"></add-meal>\n  <edit-mealtracker-details *ngIf=\"selectedMeal\"[mealtracker]=\"currentMeal\"></edit-mealtracker-details>\n\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MealTrackerListComponent);
