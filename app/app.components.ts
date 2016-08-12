@@ -1,4 +1,5 @@
-import { Component } from 'angular2/core';
+import { Component,EventEmitter } from 'angular2/core';
+import {MealTracker} from './mealtracker.model';
 @Component({
   selector: 'my-app',
   template: `
