@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './mealtracker.model', './mealtracker-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,21 +10,34 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, mealtracker_model_1, mealtracker_list_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (mealtracker_model_1_1) {
+                mealtracker_model_1 = mealtracker_model_1_1;
+            },
+            function (mealtracker_list_component_1_1) {
+                mealtracker_list_component_1 = mealtracker_list_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.mealtracker = [
+                        new mealtracker_model_1.MealTracker("Hamburger", "Didn't get cheese with it. I hate my life...", 354),
+                        new mealtracker_model_1.MealTracker("Fries", "They were awesome.", 600),
+                        new mealtracker_model_1.MealTracker("Soda", "IT WAS DIET!", 0),
+                        new mealtracker_model_1.MealTracker("Salad", "It was lettuce and a pound of Ranch dressing", 1000)
+                    ];
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n  <h1>Meal Tracker</h1>\n  "
+                        directives: [mealtracker_list_component_1.MealTrackerListComponent],
+                        template: "\n  <h1>Meal Tracker</h1>\n  <hr>\n  <mealtracker-list [mealTrackerList]=\"mealtracker\"></mealtracker-list>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

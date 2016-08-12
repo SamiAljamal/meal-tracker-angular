@@ -25,7 +25,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'mealtracker-display',
                         inputs: ['mealtracker'],
-                        template: "\n  <h3>{{mealtracker.name}}</h3>\n  "
+                        template: "\n  <h3>{{mealtracker.name}} | Details: {{mealtracker.details}} | Calories: {{mealtracker.calories}} </h3>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MealTrackerComponent);

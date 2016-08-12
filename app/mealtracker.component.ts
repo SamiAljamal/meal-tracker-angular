@@ -5,7 +5,7 @@ import {MealTracker} from './mealtracker.model';
   selector: 'mealtracker-display',
   inputs: ['mealtracker'],
   template: `
-  <h3>{{mealtracker.name}}</h3>
+  <h3>{{mealtracker.name}} | Details: {{mealtracker.details}} | Calories: {{mealtracker.calories}} </h3>
   `
 })
 
