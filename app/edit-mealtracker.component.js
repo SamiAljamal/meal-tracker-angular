@@ -24,8 +24,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 EditMealTrackerDetailsComponent = __decorate([
                     core_1.Component({
                         selector: "edit-mealtracker-details",
-                        inputs: ['mealtracker'],
-                        template: "\n  <div class=\"edit-form\">\n    <h2>Edit Meal </h2>\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <h3>Edit Name:</h3>\n        <input [(ngModel)]=\"mealtracker.name\" class=\"input-lg\"/>\n      </div>\n      <div class=\"col-md-6\">\n        <h3>Edit Details:</h3>\n        <input [(ngModel)]=\"mealtracker.details\" class=\"input-lg\"/>\n      </div>\n      <div class=\"col-md-6\">\n        <h3>Edit Calories:</h3>\n        <input [(ngModel)]=\"mealtracker.calories\" class=\"input-lg\"/>\n      </div>\n    </div>\n  </div>\n  "
+                        inputs: ['mealTracker'],
+                        template: "\n  <div class=\"edit-form\">\n    <h2>Edit Meal </h2>\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <h3>Edit Name:</h3>\n        <input [(ngModel)]=\"mealTracker.name\" class=\"input-lg\"/>\n      </div>\n      <div class=\"col-md-6\">\n        <h3>Edit Details:</h3>\n        <input [(ngModel)]=\"mealTracker.details\" class=\"input-lg\"/>\n      </div>\n      <div class=\"col-md-6\">\n        <h3>Edit Calories:</h3>\n        <input [(ngModel)]=\"mealTracker.calories\" class=\"input-lg\"/>\n      </div>\n    </div>\n  </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], EditMealTrackerDetailsComponent);

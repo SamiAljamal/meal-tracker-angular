@@ -12,7 +12,7 @@ import {AddMealComponent} from './add-meal.component';
   template: `
   <mealtracker-display *ngFor="#currentMeal of mealTrackerList"[class.selected]="currentMeal ===selectedMeal"(click)="mealClicked(currentMeal)"[mealtracker]="currentMeal"></mealtracker-display>
   <add-meal (onSubmitForm)="createMeal($event)"></add-meal>
-  <edit-mealtracker-details *ngIf="selectedMeal"[mealtracker]="currentMeal"></edit-mealtracker-details>
+  <edit-mealtracker-details *ngIf="selectedMeal"[mealTracker]="selectedMeal"></edit-mealtracker-details>
 
   `
 })

@@ -48,7 +48,7 @@ System.register(['angular2/core', './mealtracker.component', './mealtracker.mode
                         inputs: ['mealTrackerList'],
                         outputs: ['onMealTrackerSelect'],
                         directives: [mealtracker_component_1.MealTrackerComponent, edit_mealtracker_component_1.EditMealTrackerDetailsComponent, add_meal_component_1.AddMealComponent],
-                        template: "\n  <mealtracker-display *ngFor=\"#currentMeal of mealTrackerList\"[class.selected]=\"currentMeal ===selectedMeal\"(click)=\"mealClicked(currentMeal)\"[mealtracker]=\"currentMeal\"></mealtracker-display>\n  <add-meal (onSubmitForm)=\"createMeal($event)\"></add-meal>\n  <edit-mealtracker-details *ngIf=\"selectedMeal\"[mealtracker]=\"currentMeal\"></edit-mealtracker-details>\n\n  "
+                        template: "\n  <mealtracker-display *ngFor=\"#currentMeal of mealTrackerList\"[class.selected]=\"currentMeal ===selectedMeal\"(click)=\"mealClicked(currentMeal)\"[mealtracker]=\"currentMeal\"></mealtracker-display>\n  <add-meal (onSubmitForm)=\"createMeal($event)\"></add-meal>\n  <edit-mealtracker-details *ngIf=\"selectedMeal\"[mealTracker]=\"selectedMeal\"></edit-mealtracker-details>\n\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MealTrackerListComponent);
