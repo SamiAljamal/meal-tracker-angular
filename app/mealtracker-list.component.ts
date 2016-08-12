@@ -12,14 +12,20 @@ import {CaloriesPipe} from './calories.pipe';
   pipes: [CaloriesPipe],
   directives:[MealTrackerComponent,EditMealTrackerDetailsComponent,AddMealComponent],
   template: `
-  <select (change)="onChange($event.target.value)">
-    <option value="0-400">0-400</option>
-    <option value="400-800">400-800</option>
-    <option value="800+">800+</option>
-    <option value="showall">Show All</option>
-  </select>
+  <label>Filter</label>
+  <div class="select">
+    <select (change)="onChange($event.target.value)">
+      <option value="0-400">0-400</option>
+      <option value="400-800">400-800</option>
+      <option value="800+">800+</option>
+      <option value="showall">Show All</option>
+    </select>
+  </div>
+  <hr>
   <mealtracker-display *ngFor="#currentMeal of mealTrackerList | calories:selectedCalories"[class.selected]="currentMeal ===selectedMeal"(click)="mealClicked(currentMeal)"[mealtracker]="currentMeal"></mealtracker-display>
+  <hr>
   <add-meal (onSubmitForm)="createMeal($event)"></add-meal>
+  <hr>
   <edit-mealtracker-details *ngIf="selectedMeal"[mealTracker]="selectedMeal"></edit-mealtracker-details>
 
   `

@@ -5,7 +5,7 @@ import {MealTracker} from './mealtracker.model';
   selector: 'add-meal',
   outputs: ['onSubmitForm'],
   template: `
-  <div class="container">
+  <div class="addmeal">
     <h2>Add Meal</h2>
     <div class="form-group">
       <label for="name">Name:</label>
@@ -17,8 +17,9 @@ import {MealTracker} from './mealtracker.model';
     </div>
     <div class="form-group">
       <label for="calories">Calories:</label>
-      <input type="number" class="form-control input-lg" id="calories" #addCalories>
+      <input type="number" class="form-control input-lg" id="calories" placeholder="Calories" #addCalories>
     </div>
+
     <button (click)="addMeal(addName, addDetails, addCalories)" class="btn btn-primary btn-lg">Add</button>
   </div>
   `

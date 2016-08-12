@@ -7,21 +7,19 @@ import {MealTracker} from './mealtracker.model';
   template: `
   <div class="edit-form">
     <h2>Edit Meal </h2>
-    <div class="row">
-      <div class="col-md-6">
+      <div class="form-group">
         <h3>Edit Name:</h3>
-        <input [(ngModel)]="mealTracker.name" class="input-lg"/>
+        <input [(ngModel)]="mealTracker.name" class="form-control input-lg"/>
       </div>
-      <div class="col-md-6">
+      <div class="form-group">
         <h3>Edit Details:</h3>
-        <input [(ngModel)]="mealTracker.details" class="input-lg"/>
+        <input [(ngModel)]="mealTracker.details" class="form-control input-lg"/>
       </div>
-      <div class="col-md-6">
+      <div class="form-group">
         <h3>Edit Calories:</h3>
-        <input [(ngModel)]="mealTracker.calories" class="input-lg"/>
+        <input [(ngModel)]="mealTracker.calories" class="form-control input-lg"/>
       </div>
     </div>
-  </div>
   `
 })
 
